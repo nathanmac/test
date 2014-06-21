@@ -15,7 +15,7 @@ class Test extends \PHPUnit_Framework_TestCase {
     {
         $conn_id = ftp_connect('127.0.0.1') or \PHPUnit_Framework_Assert::fail('failed to connect');
 
-        if (!ftp_login($conn_id, 'travis', 'travis'))
+        if (!ftp_login($conn_id, 'anonymous', ''))
             \PHPUnit_Framework_Assert::fail('failed to login');
 
     }
