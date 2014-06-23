@@ -7,8 +7,8 @@ before_script:
   - sudo apt-get install vsftpd
   - sudo mkdir /home/travis/build/ftp
   - sudo mkdir /home/travis/build/ftp/pub
-  - sudo usermod -d -R /home/travis/build/ftp ftp
-  - sudo chmod 722 /home/travis/build/ftp
+  - sudo usermod -d /home/travis/build/ftp ftp
+  - sudo chmod 722 /home/travis/build/ftp/pub
 
   - echo "this is some data" | sudo tee /home/travis/build/ftp/file_1.txt
   - echo "this is some data" | sudo tee /home/travis/build/ftp/file_2.txt
