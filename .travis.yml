@@ -8,9 +8,9 @@ before_script:
   - sudo mkdir /ftp
   - sudo usermod -d /ftp ftp
   - ls
-
-  - echo "this is some data" >> /ftp/file_1.txt
-  - echo "this is some data" >> /ftp/file_2.txt
+  - pwd
+  - sudo echo "this is some data" >> sudo /ftp/file_1.txt
+  - sudo echo "this is some data" >> sudo /ftp/file_2.txt
 
   - sudo sed -i s/#anonymous_enable=YES/anonymous_enable=YES/g /etc/vsftpd.conf
   - sudo sed -i s/#anon_upload_enable=YES/anon_upload_enable=YES/g /etc/vsftpd.conf
