@@ -7,13 +7,9 @@ before_script:
   - sudo apt-get install vsftpd
   - sudo mkdir /home/travis/build/ftp
   - sudo usermod -d /home/travis/build/ftp ftp
-  - sudo chmod -R 777 /home/travis/build/ftp
-  - ls
-  - pwd
+  - sudo chmod 722 /home/travis/build/ftp
   - echo "this is some data" | sudo tee /home/travis/build/ftp/file_1.txt
   - echo "this is some data" | sudo tee /home/travis/build/ftp/file_2.txt
-
-  - ls /home/travis/build/ftp
 
   - sudo sed -i s/#anonymous_enable=YES/anonymous_enable=YES/g /etc/vsftpd.conf
   - sudo sed -i s/#anon_upload_enable=YES/anon_upload_enable=YES/g /etc/vsftpd.conf
