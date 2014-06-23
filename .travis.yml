@@ -8,6 +8,8 @@ before_script:
   - sudo mkdir /home/travis/build/ftp
   - sudo mkdir /home/travis/build/ftp/pub
   - sudo usermod -d /home/travis/build/ftp ftp
+
+  - sudo usermod -d /home/travis/build/ftp/pub ftp
   - sudo chmod 722 /home/travis/build/ftp/pub
 
   - echo "this is some data" | sudo tee /home/travis/build/ftp/file_1.txt
