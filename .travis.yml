@@ -9,8 +9,8 @@ before_script:
   - sudo usermod -d /home/travis/build/ftp ftp
   - ls
   - pwd
-  - sudo echo "this is some data" >> sudo /home/travis/build/ftp/file_1.txt
-  - sudo echo "this is some data" >> sudo /home/travis/build/ftp/file_2.txt
+  - echo "this is some data" | sudo tee /home/travis/build/ftp/file_1.txt
+  - echo "this is some data" | sudo tee /home/travis/build/ftp/file_2.txt
 
   - ls /home/travis/build/ftp
 
