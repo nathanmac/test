@@ -5,9 +5,9 @@ php:
   - 5.5
 
 before_script:
-  - sudo useradd -d /home/testuser -m testuser -p testuser
   - sudo apt-get install vsftpd
-  - sudo sed -i s/#local_enable=YES/local_enable=YES/g /etc/vsftpd.conf
-  - sudo sed -i s/#write_enable=YES/write_enable=YES/g /etc/vsftpd.conf
+  - sudo sed -i s/#anonymous_enable=YES/anonymous_enable=YES/g /etc/vsftpd.conf
+  - sudo sed -i s/#anon_upload_enable=YES/anon_upload_enable=YES/g /etc/vsftpd.conf
+  - sudo sed -i s/#anon_mkdir_write_enable=YES/anon_mkdir_write_enable=YES/g /etc/vsftpd.conf
   - sudo service vsftpd restart
   - cat /etc/vsftpd.conf
