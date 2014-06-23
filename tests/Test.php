@@ -24,7 +24,11 @@ class Test extends \PHPUnit_Framework_TestCase {
 
         var_dump(ftp_nlist($conn_id, '.'));
 
-        ftp_chdir($conn_id, '/home/travis/build/ftp/pub');
+        ftp_mkdir($conn_id, 'test');
+
+        var_dump(ftp_nlist($conn_id, '.'));
+
+        ftp_chdir($conn_id, '/pub');
 
         echo ftp_pwd($conn_id) . PHP_EOL;
         ftp_put($conn_id, 'file.txt', 'file.txt', FTP_BINARY);
