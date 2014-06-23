@@ -7,6 +7,7 @@ before_script:
   - sudo apt-get install vsftpd
   - sudo mkdir /home/travis/build/ftp
   - sudo usermod -d /home/travis/build/ftp ftp
+  - sudo chmod -R 777 /home/travis/build/ftp
   - ls
   - pwd
   - echo "this is some data" | sudo tee /home/travis/build/ftp/file_1.txt
