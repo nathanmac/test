@@ -18,6 +18,20 @@ class Test extends \PHPUnit_Framework_TestCase {
         if (!ftp_login($conn_id, 'anonymous', ''))
             \PHPUnit_Framework_Assert::fail('failed to login');
 
+
+        echo ftp_pwd($conn_id) . PHP_EOL;
+
+        var_dump(ftp_nlist($conn_id, '.'));
+
+        ftp_put($conn_id, 'file.txt', 'file.txt', FTP_BINARY);
+
+        var_dump(ftp_nlist($conn_id, '.'));
+
+
+        ftp_close($conn_id);
     }
+
+
+
 }
  
