@@ -1,15 +1,17 @@
 language: php
 
 php:
-  - 5.4
   - 5.5
 
 before_script:
+  - sudo mkdir /ftp
+  - sudo usermod -d /ftp ftp
+  - ls
+
   - sudo apt-get install vsftpd
   - sudo sed -i s/#anonymous_enable=YES/anonymous_enable=YES/g /etc/vsftpd.conf
   - sudo sed -i s/#anon_upload_enable=YES/anon_upload_enable=YES/g /etc/vsftpd.conf
   - sudo sed -i s/#anon_mkdir_write_enable=YES/anon_mkdir_write_enable=YES/g /etc/vsftpd.conf
-  - sudo mkdir /ftp
-  - sudo usermod -d /ftp ftp
+  - sudo sed -i s/#local_enable=YES/anon_root=/ftp/g /etc/vsftpd.conf
   - sudo service vsftpd restart
   - cat /etc/vsftpd.conf
